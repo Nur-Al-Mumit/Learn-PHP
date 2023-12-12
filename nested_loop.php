@@ -1,7 +1,7 @@
 <?php 
 echo '<h1 style="text-align: center"> Nested Loops Exercise </h1> <br/>';
 
-//loop inside loop; 01314253768
+//loop inside loop;
 
 
 for ($i = 0; $i <= 5; $i++){
