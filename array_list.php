@@ -240,34 +240,58 @@ echo "<table border='1' style='border-collapse: collapse; width: 100%; margin: 2
 <th>Skills</th>
 <th>Work History</th>
 </tr>";
+// foreach($users as $user){  
+//     echo '<tr>';
+//     foreach($user as $infos){
+//         if (is_array($infos)){
+//             echo"<td>";
+//             foreach($infos as $key => $info){
+//               if(!is_numeric($key)){
+//                   echo "<p> $key : ";
+//               }
+//                 if(is_array($info) && !is_numeric($key)){
+//                     foreach($info as $key => $i){
+//                         echo $i . ', ';
+//                     }
+//                 }elseif(is_array($info) && is_numeric($key)){
+//                     foreach($info as $key => $i){
+//                         echo "<p> $key : $i </p>";
+//                     }
+//                 }else {
+//                     echo $info;
+//                 }
+//                 echo "</p>";
+//             }
+//             echo "</td>";
+//         }else{
+//             echo"<td> $infos </td>";
+//         }
+//     }    
+// }
+
+// updated version off this code
+
 foreach($users as $user){  
     echo '<tr>';
     foreach($user as $infos){
-        if (is_array($infos)){
-            echo"<td>";
+        echo is_array($infos) ? "<td>" : "<td> $infos </td>";
             foreach($infos as $key => $info){
-                // if(!is_numeric($key)){
-                //     echo "<p> $key : ";
-                // }
                 echo !is_numeric($key) ? "<p> $key : " : '';
                 if(is_array($info) && !is_numeric($key)){
-                    foreach($info as $key => $i){
-                        echo $i . ', ';
-                    }
+                    echo implode(', ', $info);
                 }elseif(is_array($info) && is_numeric($key)){
                     foreach($info as $key => $i){
                         echo "<p> $key : $i </p>";
                     }
+                    // echo "<p>". implode(', ', $info) . "</p>";
                 }else {
                     echo $info;
                 }
                 echo "</p>";
             }
-            echo "</td>";
-        }else{
-            echo"<td> $infos </td>";
-        }
-    }    
+            echo is_array($infos) ? "<td>" : '';
+    }
+    echo "</tr>";
 }
 echo "</table>";
 ?>
