@@ -163,7 +163,7 @@ echo "<br>";
 
 
 echo " Re-index:";
-
+    
 echo "<pre>\$array = array_values(\$array);
 \$array[] = 7;</pre>";
 
@@ -175,5 +175,104 @@ print_r($array);
 echo"</pre>";
 echo "<br>";
 
+$arr = [100, 200, 300,];
 
+echo "<pre>";
+print_r($arr);
+echo"</pre>";
+echo "<br>";
+
+unset($arr[2]);
+echo "<pre>";
+print_r($arr);
+echo"</pre>";
+echo "<br>";
+
+
+
+$arr[] = 400;
+echo "<pre>";
+print_r($arr);
+echo"</pre>";
+echo "<br>";
+
+
+// $arr[] = 400;
+$arr = array_values($arr);
+echo "<pre>";
+print_r($arr);
+echo"</pre>";
+echo "<br>";
+
+
+
+echo "Array destructuring <br>";
+
+$new_arr = ['el1','el2','el3'];
+
+[$el_1, $el_2, $el_3]   = $new_arr;
+
+// with index
+[1 => $x] = $new_arr;
+
+echo $el_1, '<br>' , $el_2, "<br>", $el_3 ,"<br>";
+echo $x, '<br>' . "\$x <br>";
+
+// associative arrays 
+echo 'associative array destructuring <br>';
+
+$asso_arr = ['el1' => 1, 'el2' => 2, 'el3' => 3];
+['el2' => $x] = $asso_arr;
+echo $x;
+
+
+// error_reporting(E_ALL);
+// error_reporting(E_ALL);
+// ini_set('display_errors', true);
+// ini_set('html_errors', false);
+
+// Simple array:
+$array = array(1, 2);
+$count = count($array);
+for ($i = 0; $i < $count; $i++) {
+    echo "\nChecking $i: <br>";
+    echo "Bad: " . $array['$i'] . "<br>";
+    echo "Good: " . $array[$i] . "<br>";
+    echo "Bad: {$array['$i']}<br>";
+    echo "Good: {$array[$i]}<br>";
+}
+
+
+$asso_arr = ['el1' => 1, 'el2' => 2, 'el3' => 3, 'el4' => 4,'el4' => 4];
+
+echo count($asso_arr);
+echo sizeof($asso_arr);
+print_r(array_count_values($asso_arr));
+
+
+echo "Array unpacking <br>"; 
+
+$arr_1 = [5,6,9,5,7,4];
+$arr_2 = [...$arr_1];
+$arr_3 = [0,0,0, ...$arr_2];
+
+function getArr(){
+    return [99, 88];
+}
+
+$arr_4 = [...getArr(), ...$arr_1];
+
+echo '<pre>';
+
+// print_r($arr_1);
+// print_r($arr_2);
+// print_r($arr_3);
+print_r($arr_4);
+$arr1 = [1, 2 ,3];
+$arr2 = ["a" => 0];
+// from php 8.1 we can unpacke string key too
+$arr3 = [...$arr1, ...$arr2];
+$file = fopen('text.txt', r);
+print_r($arr3);
+echo '</pre>';
 ?>

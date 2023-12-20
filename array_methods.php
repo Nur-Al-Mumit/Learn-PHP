@@ -27,7 +27,6 @@
 
                 <li>can't directly work with other iterable </li>
                 <li>can use (=>) arrow notation for ArrayObject it provides object oriented way to work array</li>
-
             </ul>
             <div>
 
