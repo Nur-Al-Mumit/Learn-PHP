@@ -271,8 +271,43 @@ print_r($arr_4);
 $arr1 = [1, 2 ,3];
 $arr2 = ["a" => 0];
 // from php 8.1 we can unpacke string key too
+// echo "from php 8.1 we can unpacke string key too";
 $arr3 = [...$arr1, ...$arr2];
-$file = fopen('text.txt', r);
+// $file = fopen('text.txt', r);
 print_r($arr3);
 echo '</pre>';
+
+
+$colors = ['red', 'blue', 'green', 'yellow'];
+
+foreach($colors as &$color){
+    $color = strtoupper($color);
+}
+unset($color);
+
+$firstquarter  = array('a' => 'January', 'February', 'March');
+
+
+$arr1 = array(2, 3);
+$arr2 = $arr1;
+$arr2[] = 4; // $arr2 is changed,
+// $arr1 is still array(2, 3)
+             
+// $arr3 = &$arr1;
+$arr3 = &$arr1;
+// $arr3 = $arr1;
+$arr3[] = 4; // now $arr1 and $arr3 are the same
+
+echo "<pre>";
+
+// print_r($colors);
+// print_r($firstquarter);
+
+echo 'arr1 '; print_r($arr1);
+echo 'arr2 '; print_r($arr2);
+echo 'arr3 '; print_r($arr3); 
+// print_r($arr1);
+
+echo '</pre>';
+
 ?>
