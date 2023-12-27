@@ -547,7 +547,7 @@ echo '<br> 23. array_flip <br>';
  * 
 */
 
-$flip_arr = ['one' => 1, 'three' => 3, 'two' => 2, 'three' => 3, 'four' => 4];
+$flip_arr  = ['one' => 1, 'three' => 3, 'two' => 2, 'three' => 3, 'four' => 4];
 
 
 $flip_res = array_flip($flip_arr);
