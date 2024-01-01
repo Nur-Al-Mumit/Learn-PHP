@@ -1,3 +1,3 @@
 <?php
 
-echo 'Inheritance';
+echo 'Inheritance';"
