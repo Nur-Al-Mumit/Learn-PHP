@@ -504,7 +504,7 @@ echo '<br> 22. array_unshift <br>';
  * fore adding element to the beginning of an array 
  */
 
- $foods = [
+$foods = [
     'apples' => [
         'McIntosh' => 'red',
         'Granny Smith' => 'green',
@@ -545,7 +545,7 @@ echo '<br> 23. array_flip <br>';
 
 /**
  * 
-*/
+ */
 
 $flip_arr  = ['one' => 1, 'three' => 3, 'two' => 2, 'three' => 3, 'four' => 4];
 

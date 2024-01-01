@@ -141,3 +141,144 @@ $y = new main_base();
 // echo $x->pub_name;
 // echo $x->pro_name;
 // echo $x->pri_name;
+
+
+class test_1
+{
+    private $num;
+
+    function __construct()
+    {
+        $this->num = 3;
+    }
+
+    // Getter function
+    protected function getData()
+    {
+        echo "print form getData()";
+    }
+}
+
+class inherit_test_1 extends test_1
+{
+    function getData()
+    {
+        echo "print from getData extended";
+    }
+}
+
+$test_obj = new inherit_test_1();
+
+$test_obj->getData();
+
+
+// Abstract Class
+
+/**
+ * atleast contain 1 abstract function
+ * abstract function just declare but not implement
+ * can't create obj with it
+ * child class must contain abstract function
+*/
+
+abstract class main
+{
+    // protected $name;
+    protected $name;
+
+    // protected function __construct($name)
+    // {
+    //     $this->name = $name;
+    // }
+
+    abstract protected function show($x, $y);
+}
+
+
+class extended_main extends main
+{
+    public function show($x, $y)
+    {
+        echo $x + $y;
+    }
+}
+$test = new extended_main();
+$test->show(5, 6);
+
+echo '<br>';
+
+
+// interface
+
+/**
+ * interface support multiple inheritence
+ * it can only contain abstract function
+ * can't define variables
+ * no constructor  
+ * support multiple inheritence
+ * 
+*/
+
+interface display
+{
+   public function show($name);
+}
+
+interface manageSession
+{
+    public function login($token);
+    public function logout($token);
+}
+
+
+class account implements display, manageSession
+{
+    public function show($name){
+        echo 'function show()';
+    }
+
+    public function login($token)
+    {
+        echo 'logIn $token';
+    }
+
+    function logout($token)
+    {
+        echo 'logout';
+    }
+}
+
+$new = new account();
+// $new->show('ddd');
+
+
+// Static Members
+
+/**
+ * 
+*/
+
+class static_class
+{
+    static public $x = 07;
+
+    function get_number(){
+        return $this->x;
+    }
+}
+
+// $x = new static_class();
+// echo $x->x;
+echo static_class::$x;
+
+class static_class_2
+{
+    static public $x = 10;
+
+    //access static variabls in static function 
+
+    static function get_number(){
+        echo self::$x;
+    }
+    
+}
