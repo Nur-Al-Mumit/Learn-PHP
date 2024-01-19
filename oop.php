@@ -2,6 +2,7 @@
 class calc
 {
     public $x, $y, $z;
+
     function add()
     {
         $this->z = $this->y + $this->x;
@@ -13,6 +14,8 @@ $cal1 = new calc();
 $cal1->x = 5;
 $cal1->y = 2;
 // echo $cal1->add();
+
+
 
 class person
 {
@@ -64,9 +67,9 @@ class employe extends people
     }
 }
 
-// $x = new people();
-// $y = new employe();
-// $y->show();
+$x = new people();
+$y = new employe();
+$y->show();
 echo '<br>';
 echo '<br>';
 echo '<br>';
