@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
 </head>
+
 <body>
     <main>
         <header>
@@ -28,10 +30,11 @@
         </section>
     </main>
 </body>
+
 </html>
 
 
-<?php 
+<?php
 //example of index array 
 /** we can access with index */
 $arr = [12, 15, 9, 6, 74, 87, 30, 40]; // it's consider as best practice 
@@ -88,14 +91,14 @@ echo "<div>";
 $arr = array(5 => 1, 12 => 2);
 echo '$arr = array(5 => 1, 12 => 2) <br>';
 
-$arr[] = 56;    
+$arr[] = 56;
 echo "\$arr[] = 56;    
 <br> This is the same as \$arr[13] = 56;
 <br> at this point of the script";
 
 echo "<pre>";
 print_r($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 echo "</div>";
 
@@ -105,28 +108,28 @@ echo '$arr["x"] = 42;
  <br> the array with key "x"';
 
 $arr["x"] = 42;
- // This adds a new element to
- // the array with key "x"
+// This adds a new element to
+// the array with key "x"
 
- echo "<pre>";
+echo "<pre>";
 var_dump($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
-                
+
 echo "unset(\$arr[5]); // This removes the element from the array";
 unset($arr[5]); // This removes the element from the array
 echo "<pre>";
 var_dump($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 echo "unset(\$arr);    // This deletes the whole array";
 unset($arr);    // This deletes the whole array
 echo "<pre>";
 var_dump($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
@@ -135,7 +138,7 @@ echo ' Create a simple array.';
 $array = array(1, 2, 3, 4, 5);
 echo "<pre>";
 print_r($array);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 echo "Now delete every item, but leave the array itself intact:";
@@ -147,7 +150,7 @@ foreach ($array as $i => $value) {
 }
 echo "<pre>";
 print_r($array);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
@@ -158,12 +161,12 @@ $array[] = 6;
 
 echo "<pre>";
 print_r($array);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
 echo " Re-index:";
-    
+
 echo "<pre>\$array = array_values(\$array);
 \$array[] = 7;</pre>";
 
@@ -172,20 +175,20 @@ $array[] = 7;
 
 echo "<pre>";
 print_r($array);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 $arr = [100, 200, 300,];
 
 echo "<pre>";
 print_r($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 unset($arr[2]);
 echo "<pre>";
 print_r($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
@@ -193,7 +196,7 @@ echo "<br>";
 $arr[] = 400;
 echo "<pre>";
 print_r($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
@@ -201,21 +204,21 @@ echo "<br>";
 $arr = array_values($arr);
 echo "<pre>";
 print_r($arr);
-echo"</pre>";
+echo "</pre>";
 echo "<br>";
 
 
 
 echo "Array destructuring <br>";
 
-$new_arr = ['el1','el2','el3'];
+$new_arr = ['el1', 'el2', 'el3'];
 
 [$el_1, $el_2, $el_3]   = $new_arr;
 
 // with index
 [1 => $x] = $new_arr;
 
-echo $el_1, '<br>' , $el_2, "<br>", $el_3 ,"<br>";
+echo $el_1, '<br>', $el_2, "<br>", $el_3, "<br>";
 echo $x, '<br>' . "\$x <br>";
 
 // associative arrays 
@@ -243,20 +246,22 @@ for ($i = 0; $i < $count; $i++) {
 }
 
 
-$asso_arr = ['el1' => 1, 'el2' => 2, 'el3' => 3, 'el4' => 4,'el4' => 4];
+$asso_arr = ['el1' => 1, 'el2' => 2, 'el3' => 3, 'el4' => 4, 'el4' => 4];
 
 echo count($asso_arr);
 echo sizeof($asso_arr);
 print_r(array_count_values($asso_arr));
 
+echo '<br>';
 
-echo "Array unpacking <br>"; 
+echo "Array unpacking <br>";
 
-$arr_1 = [5,6,9,5,7,4];
+$arr_1 = [5, 6, 9, 5, 7, 4];
 $arr_2 = [...$arr_1];
-$arr_3 = [0,0,0, ...$arr_2];
+$arr_3 = [0, 0, 0, ...$arr_2];
 
-function getArr(){
+function getArr()
+{
     return [99, 88];
 }
 
@@ -268,7 +273,7 @@ echo '<pre>';
 // print_r($arr_2);
 // print_r($arr_3);
 print_r($arr_4);
-$arr1 = [1, 2 ,3];
+$arr1 = [1, 2, 3];
 $arr2 = ["a" => 0];
 // from php 8.1 we can unpacke string key too
 // echo "from php 8.1 we can unpacke string key too";
@@ -276,14 +281,16 @@ $arr3 = [...$arr1, ...$arr2];
 // $file = fopen('text.txt', r);
 print_r($arr3);
 echo '</pre>';
+echo 'test';
 
 
 $colors = ['red', 'blue', 'green', 'yellow'];
 
-foreach($colors as &$color){
+foreach ($colors as &$color) {
     $color = strtoupper($color);
 }
-unset($color);
+// unset($color);
+var_dump($colors);
 
 $firstquarter  = array('a' => 'January', 'February', 'March');
 
@@ -292,7 +299,7 @@ $arr1 = array(2, 3);
 $arr2 = $arr1;
 $arr2[] = 4; // $arr2 is changed,
 // $arr1 is still array(2, 3)
-             
+
 // $arr3 = &$arr1;
 $arr3 = &$arr1;
 // $arr3 = $arr1;
@@ -303,9 +310,12 @@ echo "<pre>";
 // print_r($colors);
 // print_r($firstquarter);
 
-echo 'arr1 '; print_r($arr1);
-echo 'arr2 '; print_r($arr2);
-echo 'arr3 '; print_r($arr3); 
+echo 'arr1 ';
+print_r($arr1);
+echo 'arr2 ';
+print_r($arr2);
+echo 'arr3 ';
+print_r($arr3);
 // print_r($arr1);
 
 echo '</pre>';

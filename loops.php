@@ -5,6 +5,7 @@ echo "<h1> PHP LOOPS </h1>";
 $loops = array('while', 'do/while', 'for', 'forEach');
 
 echo '<h3> While loop <br/> </h3>';
+
 $i = 0;
 while($i <= count($loops)){
     echo $loops[$i] . '<br/>';
