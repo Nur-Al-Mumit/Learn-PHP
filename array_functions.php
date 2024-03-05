@@ -68,7 +68,7 @@ echo '<br> 02. array_chunk <br>';
 $chunk_arr = [5, 7, 8, 6, 4, 3];
 
 echo "<pre>";
-print_r(array_chunk($chunk_arr, 2, true));
+print_r(array_chunk($chunk_arr, 2, false));
 echo '</pre>';
 
 
@@ -291,14 +291,16 @@ $search_arr = ['one' => 1, 'three' => 3, 5 => 5, '7' => 7, 'nine' => 9];
 if (array_key_exists('5', $search_arr)) {
     echo "<br> The element is in the array";
 }
+if (key_exists('three', $search_arr)){
+    echo "<br> The element is in the array (in updated php versoin)";
+}
+    // echo "<pre>";
+    // print_r(in_array('54', $find_val));
+    // echo '</pre>';
 
-// echo "<pre>";
-// print_r(in_array('54', $find_val));
-// echo '</pre>';
 
 
-
-echo '<br> 13. array_map <br>';
+    echo '<br> 13. array_map <br>';
 
 /**
  *
@@ -325,7 +327,7 @@ echo "<pre>";
 // print_r(array_map('map_func', $map_arr));
 print_r(array_map('map_func', range(3, 6))); //Performing a zip operation
 // print_r(array_map(fn($val)=> $val * 2, $map_arr));
-print_r($d);
+// print_r($d);
 echo '</pre>';
 
 
@@ -365,7 +367,8 @@ $push_arr   = ['one' => 1, 'three' => 3];
 $push_arr_2 = ['five', 'nine'];
 // array_push($push_arr, 'five', 'nine');
 // array_push($push_arr, $push_arr_2);
-array_push($push_arr, 'one', 'three');
+// array_push($push_arr, 'one', 'three');
+array_push($push_arr, $push_arr_2);
 
 echo "<pre>";
 print_r($push_arr);
@@ -379,7 +382,7 @@ echo '<br> 16. array_replace <br>';
  */
 
 $base = ['one', 'two', 'three', 'four'];
-$replace_arr   = ['five', 10 => 'nine'];
+$replace_arr   = [1 =>'five', 10 => 'nine'];
 
 
 
@@ -401,8 +404,8 @@ $base = ['one', 'two', 'three', 'four'];
 
 
 echo "<pre>";
-// print_r(array_reverse($base, true));
-print_r(array_reverse($base));
+print_r(array_reverse($base, true));
+// print_r(array_reverse($base));
 echo '</pre>';
 
 
@@ -448,7 +451,7 @@ $splice_arr = ["a", "b", "c", "d", "e"];
 
 echo "<pre>";
 // print_r(array_splice($splice_arr, 2));
-// print_r($splice_arr);
+print_r($splice_arr);
 // print_r(array_splice($splice_arr, 3));
 // print_r(array_splice($splice_arr, 0, 1));
 // print_r(array_splice($splice_arr, 2, 0));
